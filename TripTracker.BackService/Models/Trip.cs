@@ -7,5 +7,6 @@ namespace TripTracker.BackService.Models
 {
     public class Trip
     {
+
     }
 }
