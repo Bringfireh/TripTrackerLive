@@ -28,7 +28,7 @@ namespace TripTracker.BackService
             services.AddTransient<Models.Repository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSwaggerGen(options => 
-            options.SwaggerDoc("V1", new Info {Title="Trip Tracker", Version="v1" })
+            options.SwaggerDoc("v1", new Info {Title="Trip Tracker", Version="v1" })
             );
         }
 
