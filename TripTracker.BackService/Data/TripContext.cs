@@ -9,6 +9,6 @@ namespace TripTracker.BackService.Data
 {
     public class TripContext : DbContext
     {
-        public DbSet<Trip> trip {get;set;}
+        public DbSet<Trip> trips {get;set;}
     }
 }
