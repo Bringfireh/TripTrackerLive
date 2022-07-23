@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using TripTracker.BackService.Data;
+using System.Data.Sql;
 
 namespace TripTracker.BackService
 {
@@ -27,6 +29,8 @@ namespace TripTracker.BackService
         {
             services.AddTransient<Models.Repository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            //services.AddDbContextPool<TripContext>();
             services.AddSwaggerGen(options => 
             options.SwaggerDoc("v1", new Info {Title="Trip Tracker", Version="v1" })
             );
