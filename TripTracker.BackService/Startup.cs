@@ -12,6 +12,7 @@ using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 using TripTracker.BackService.Data;
 using System.Data.Sql;
+using Microsoft.EntityFrameworkCore;
 
 namespace TripTracker.BackService
 {
@@ -30,7 +31,11 @@ namespace TripTracker.BackService
             services.AddTransient<Models.Repository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            //services.AddDbContextPool<TripContext>();
+            string connectionString = @"data source=.\SqlExpress;initial catalog=NUCAS;integrated security=True;MultipleActiveResultSets=True;App=EntityFrameworkCore";
+            
+            //services.AddDbContext<TripContext>(o => o.UseSqlite("Data Source =JeffTrips.db"));
+
+            services.AddDbContext<TripContext>(options => options.UseSqlServer(connectionString));
             services.AddSwaggerGen(options => 
             options.SwaggerDoc("v1", new Info {Title="Trip Tracker", Version="v1" })
             );
