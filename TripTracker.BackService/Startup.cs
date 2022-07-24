@@ -28,10 +28,10 @@ namespace TripTracker.BackService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<Models.Repository>();
+           // services.AddTransient<Models.Repository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            string connectionString = @"data source=.\SqlExpress;initial catalog=NUCAS;integrated security=True;MultipleActiveResultSets=True;App=EntityFrameworkCore";
+            string connectionString = @"data source=.\SqlExpress;initial catalog=TripTracking;integrated security=True;MultipleActiveResultSets=True;App=EntityFrameworkCore";
             
             //services.AddDbContext<TripContext>(o => o.UseSqlite("Data Source =JeffTrips.db"));
 
@@ -58,6 +58,7 @@ namespace TripTracker.BackService
             }
 
             app.UseMvc();
+            TripContext.SeedData(app.ApplicationServices);
         }
     }
 }
