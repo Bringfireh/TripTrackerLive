@@ -10,7 +10,7 @@ namespace TripTracker.BackService.Models
     public class Trip
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
