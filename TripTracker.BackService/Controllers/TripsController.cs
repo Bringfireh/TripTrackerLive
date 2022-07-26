@@ -28,9 +28,12 @@ namespace TripTracker.BackService.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<Trip> Get(int id)
+        public IActionResult Get(int id)
         {
-            return _context.trips.Find(id);
+            var trip = _context.trips.Find(id);
+            if (trip == null)
+                return NotFound();
+            return Ok(trip);
         }
 
         // POST api/values
