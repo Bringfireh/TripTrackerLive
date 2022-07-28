@@ -31,7 +31,7 @@ namespace TripTracker.BackService
            // services.AddTransient<Models.Repository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            string connectionString = @"data source=.\SqlExpress;initial catalog=TripTracking;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+            string connectionString = @"data source=.\SqlExpress;initial catalog=TripTracking;integrated security=True;MultipleActiveResultSets=True;";
             
             //services.AddDbContext<TripContext>(o => o.UseSqlite("Data Source =JeffTrips.db"));
 
